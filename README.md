@@ -1,5 +1,9 @@
 # Force English on Lock Screen
 
+[![GNOME Extensions](https://img.shields.io/badge/GNOME%20Extensions-Force%20English%20on%20Lock%20Screen-4a86cf?logo=gnome&logoColor=white)](https://extensions.gnome.org/extension/11572/force-english-on-lock-screen/)
+
+> **Vibe coded:** this extension was built with AI assistance (vibe coding).
+
 A GNOME Shell extension that switches the keyboard layout to English whenever the
 screen locks and prevents switching to another layout while locked. When you unlock,
 your previous layout is restored.
@@ -33,15 +37,19 @@ gsettings get org.gnome.desktop.input-sources sources
 
 ## Installation
 
-### Option 1: From extensions.gnome.org
+### Option 1: From extensions.gnome.org (recommended)
 
-Once published, open the extension page and turn on the toggle (requires the
-"GNOME Shell integration" browser extension or the Extension Manager app).
+Install it from the store page:
+**https://extensions.gnome.org/extension/11572/force-english-on-lock-screen/**
+
+Turn on the toggle there (requires the "GNOME Shell integration" browser extension),
+or install it with the Extension Manager app by searching for
+"Force English on Lock Screen".
 
 ### Option 2: Manual install from GitHub
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/force-english-lock.git \
+git clone https://github.com/rwin96/gnome-force-english-lock.git \
   ~/.local/share/gnome-shell/extensions/force-english-lock@rwin
 ```
 
@@ -92,6 +100,17 @@ remove the `else if` block in `_onMode()` in `extension.js`.
 ```bash
 gnome-extensions disable force-english-lock@rwin
 rm -rf ~/.local/share/gnome-shell/extensions/force-english-lock@rwin
+```
+
+## Disclaimer
+
+This project is vibe coded: it was written with an AI assistant and tested only on
+Ubuntu 26.04 LTS (GNOME Shell 50). It is provided as is, without warranty. If you
+find a bug, please open an issue with the output of:
+
+```bash
+journalctl --user -b -g "force-english|JS ERROR"
+gnome-extensions info force-english-lock@rwin
 ```
 
 ## License
