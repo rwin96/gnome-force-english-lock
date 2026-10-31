@@ -38,6 +38,11 @@ export default class ForceEnglishLock extends Extension {
     }
 
     disable() {
+        // This extension uses the "unlock-dialog" session mode on purpose.
+        // It must keep running while the screen is locked so it can force the
+        // English input source on the lock screen and block layout switching.
+        // All signal handlers are disconnected here and references are cleared
+        // when the extension is disabled.
         if (this._modeId) Main.sessionMode.disconnect(this._modeId);
         if (this._srcId) this._mgr.disconnect(this._srcId);
         this._modeId = this._srcId = null;
