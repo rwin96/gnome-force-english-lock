@@ -1,0 +1,8 @@
+{
+  "uuid": "force-english-lock@rwin",
+  "name": "Force English on Lock Screen",
+  "description": "Switches to English when the screen locks and prevents changing layout while locked.",
+  "shell-version": ["50"],
+  "url": "https://github.com/rwin96/gnome-force-english-lock",
+  "session-modes": ["user", "unlock-dialog"]
+}
